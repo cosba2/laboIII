@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "7367fdb8-3ca9-4d24-889f-e9bb7a24f8e2",
+		"name": "SISTEMA-BANCARIO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30235870",
+		"_collection_link": "https://asdas4-8698.postman.co/workspace/SISTEMA-BANCARIO~be5b2454-d0f3-442b-8633-c2a5350fdb56/collection/40361202-7367fdb8-3ca9-4d24-889f-e9bb7a24f8e2?action=share&source=collection_link&creator=30235870"
+	},
+	"item": [
+		{
+			"name": "CLIENTE",
+			"item": [
+				{
+					"name": "GET CLIENTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "POST CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dni\": \"12345678\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"direccion\": \"Calle Falsa 123\",\r\n  \"fechaNacimiento\": \"1990-05-15\",\r\n  \"tipoPersona\": \"PERSONA_FISICA\",\r\n  \"banco\": \"Banco Nación\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CLIENTE BY DNI",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}/clientes/12345678"
+					},
+					"response": []
+				},
+				{
+					"name": "GET CLIENTE BY DNI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/clientes/39423423"
+					},
+					"response": []
+				},
+				{
+					"name": "MODIFICAR CLIENTE BY DNI",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": 39423423,\r\n    \"nombre\": \"Martin\",\r\n    \"apellido\": \"Rios\",\r\n    \"direccion\": \"Rivadavia\",\r\n    \"fechaNacimiento\": \"1999-10-10\",\r\n    \"tipoPersona\": \"PERSONA_FISICA\",\r\n    \"banco\": \"SANTANDER\",\r\n    \"fechaAlta\": \"2024-10-16\",\r\n    \"edad\": 28\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/clientes/39423423"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CUENTA",
+			"item": [
+				{
+					"name": "GET CUENTA BY DNI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/cuentas/mostrar/39011234"
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL CUENTAS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/cuentas/mostrar"
+					},
+					"response": []
+				},
+				{
+					"name": "POST CUENTA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"cuenta sofia\",\r\n    \"dniTitular\": 42155678,\r\n    \"tipoCuenta\": \"AHORRO\",\r\n    \"tipoMoneda\": \"ARS\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/cuentas/crearCuenta"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}/cuentas/eliminar/67204893"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRANSFERENCIA",
+			"item": [
+				{
+					"name": "GET TRANSFERENCIA BY CBU",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/transferencia/cuenta/48293157/transacciones"
+					},
+					"response": []
+				},
+				{
+					"name": "REALIZAR TRANSFERENCIA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipoTransferencia\": \"CREDITO\",\r\n  \"cuentaOrigen\": 15948230,\r\n  \"cuentaDestino\": 48293157,\r\n  \"monto\": 100.0,\r\n  \"descripcionBreve\": \"Pago parcial\",\r\n  \"moneda\": \"USD\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/transferencia/transferencia"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MOVIMIENTO",
+			"item": [
+				{
+					"name": "REALIZAR DEPOSITO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movimientos/deposito/15984230?monto=2000",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movimientos",
+								"deposito",
+								"15984230"
+							],
+							"query": [
+								{
+									"key": "monto",
+									"value": "2000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REALIZAR RETIRO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "monto",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/movimientos/retiro/15948230?monto=1000",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movimientos",
+								"retiro",
+								"15948230"
+							],
+							"query": [
+								{
+									"key": "monto",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL MOVIMIENTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/movimientos/operaciones/15948230"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
