@@ -1,0 +1,5 @@
+dni,nombre,apellido,direccion,fechaNacimiento,tipoPersona,banco,fechaAlta
+39423423,Martin,Rios,Rivadavia,1999-10-10,PERSONA_FISICA,SANTANDER,2024-12-17
+39423234,Juancho,Perez,Rivadia,2000-03-17,PERSONA_FISICA,BBVA,2023-07-03
+39011234,Mariana,Martinetni,Calle 123,2000-03-17,PERSONA_FISICA,BBVA,2023-07-03
+42155678,Sofia,Perez,Calle 34,2000-03-17,PERSONA_FISICA,BBVA,2023-07-03

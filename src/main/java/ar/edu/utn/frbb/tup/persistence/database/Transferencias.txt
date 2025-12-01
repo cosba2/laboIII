@@ -1,0 +1,4 @@
+cuentaOrigen,cuentaDestino,fecha,monto,moneda,tipoTransferencia,descripcionBreve
+48293157,67204893,2024-11-12,2500.0,USD,DEBITO,Transferencia para compra
+15948230,72839405,2024-12-01,10000.0,ARS,CREDITO,Pago de servicios
+15948230,48293157,2024-12-17,100.0,USD,CREDITO,Pago parcial
